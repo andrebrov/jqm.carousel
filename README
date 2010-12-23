@@ -1,0 +1,61 @@
+This id a first version of jQuery Mobile Widget.
+You can see demo here http://andrebrov.net/dev/carousel/
+
+For any question write to andrebrov@gmail.com
+
+How to use this widget.
+
+On your page create  next html code
+
+<div id="content" style="height:100%;width:300px;"> 
+	<div style="height:100%;width:300px;">		
+		<div style="height:460px;width:300px;">
+			<div  id="carousel" class="carousel">							
+				<div id="carousel_scrollpane" class="carousel-content">
+					<div id="carousel_content" class="carousel-content-scroller"> </div>
+				</div>
+				<div id="carousel_nav" class="carousel-nav">
+					<div id="carousel_mid" class="carousel-mid"></div>
+				</div>
+			</div>
+	</div>
+</div>
+
+This code will add html markup for carousel. Then add in #content div next html block,
+which describes template
+
+<div id="carousel_template" style="display:none">
+	<div class="carousel-item">
+		<div style="height:2em;font-size:1.5em;padding-bottom:15px;">@{title}</div>
+		<div id="carousel_item_@{id}" >
+			<div style="float:left;width:100%"><img src="@{image}" /></div>				      								
+		</div>
+	</div>
+</div>
+
+@{id} and @{image} params should be described in inital data in script block
+
+var carousel = new $.widgets.Carousel( {
+ 	uuid : "carousel",
+	args : { "scrollInterval" : 600,"itemWidth":290},
+	value : [
+		{ "title" : "Tron.Legacy",
+	      "image" : "images/1.jpg"
+	    },
+	    { "title" : "Yogi Bear",
+	      "image" : "images/2.jpg"
+	    },
+	    { "title" : "The Chronicles of Narnia: The Voyage of the Dawn Treader",
+	      "image" : "images/3.jpg"
+	    },
+	    { "title" : "The Fighter",
+		  "image" : "images/4.jpg"
+		},
+		{ "title" : "Tangled",
+		  "image" : "images/5.jpg"
+		}
+	]
+});		
+
+Thats all!
+		
