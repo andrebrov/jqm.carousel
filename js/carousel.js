@@ -1,3 +1,10 @@
+/*!
+ * jQuery Mobile Carousel  Widget v 1.0.1
+ * Developed by Rebrov Andrey
+ * http://andrebrov.net/
+ *
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ */
 if (!$.widgets) {
     $.widgets = function() {
         var getDimensions = function(n, min) {
