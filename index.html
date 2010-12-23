@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <style type="text/css" media="screen">@import "css/jquery.mobile-1.0a2.css";</style>        
+        <link rel="stylesheet" href="css/carousel.css" type="text/css"/>
+		<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>				
+        <script src="js/jquery.mobile-1.0a2.js" type="application/x-javascript" charset="utf-8"></script>			
+        <script src="js/carousel.js"></script>		
+        <title>Touch Carousel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+          a {
+            color : #333;
+          }
+        </style>										
+    </head>
+    <body>
+		<div data-role="page" id="main_page" data-theme="b">
+			<div data-role="content" >	
+				<div id="content" style="height:100%;width:300px;">                    					
+					<div style="height:100%;width:300px;">
+					<!-- start carousel widget html --> 
+						<div style="height:460px;width:300px;">
+							<div  id="carousel" class="carousel">							
+								<div id="carousel_scrollpane" class="carousel-content">
+									<div id="carousel_content" class="carousel-content-scroller"> </div>
+								</div>
+								<div id="carousel_nav" class="carousel-nav">
+									<div id="carousel_mid" class="carousel-mid"></div>
+								</div>
+							</div>
+						</div><!-- end carousel widget html -->
+					<!-- template used for the carousel items -->
+					<div id="carousel_template" style="display:none">
+						<div class="carousel-item">
+							<div style="height:2em;font-size:1.5em;padding-bottom:15px;">@{title}</div>
+							<div id="carousel_item_@{id}" >
+								<div style="float:left;width:100%"><img src="@{image}" /></div>				      								
+							</div>
+						</div>
+				    </div>
+					<script>
+			var carousel = new $.widgets.Carousel( {
+			 	uuid : "carousel",
+				args : { "scrollInterval" : 600,"itemWidth":290
+				},
+				  	value : [
+							{ "title" : "Tron.Legacy",
+					  	      "image" : "images/1.jpg"
+					  	    },
+					  	    { "title" : "Yogi Bear",
+					  	      "image" : "images/2.jpg"
+					  	    },
+					  	    { "title" : "The Chronicles of Narnia: The Voyage of the Dawn Treader",
+					  	      "image" : "images/3.jpg"
+					  	    },
+					  	    { "title" : "The Fighter",
+					  	      "image" : "images/4.jpg"
+					  	    },
+					  	    { "title" : "Tangled",
+					  	      "image" : "images/5.jpg"
+					  	    }
+					]
+				});					  
+		</script>		
+					<!-- end item template -->								
+				</div> <!-- content -->
+			</div>
+        </div>
+    </body>
+</html>
